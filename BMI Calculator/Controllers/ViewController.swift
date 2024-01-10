@@ -35,13 +35,18 @@ class ViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let resultController = segue.destination as? ResultsViewController else {
+            return
+        }
+        
+        resultController.calculatedBMI = BMI
+    }
+    
     @IBAction func calculateButtonPressed(_ sender: UIButton) {
         let weight = weightSlider.value
         let height = heightSlider.value
         let BMI = weight / (height * height)
-        print(BMI)
-        let hash = weightSlider.hashValue
-        print(hash)
     }
 }
 
