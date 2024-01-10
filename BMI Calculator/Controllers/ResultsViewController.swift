@@ -9,7 +9,7 @@
 import UIKit
 
 class ResultsViewController: UIViewController {
-    var calculatedBMI: Float?
+    var calculatedBMI: String?
 
     @IBOutlet weak var BMIRemarkLabel: UILabel!
     @IBOutlet weak var BMIValueLabel: UILabel!
@@ -19,9 +19,15 @@ class ResultsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        BMIValueLabel.text = calculatedBMI
     }
     
-
+    
+    @IBAction func reCalculatePressed(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 
