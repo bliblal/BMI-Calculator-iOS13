@@ -52,6 +52,7 @@ class ViewController: UIViewController {
             
             resultVC.calculatedBMI = calculatorLogic.getBMIValue()
             resultVC.advice = calculatorLogic.calculatedBMI?.advice
+            resultVC.color = calculatorLogic.calculatedBMI?.color
         }
         
     }

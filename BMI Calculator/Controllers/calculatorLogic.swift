@@ -6,7 +6,7 @@
 //  Copyright © 2024 Angela Yu. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 struct CalculatorLogic {
@@ -15,10 +15,26 @@ struct CalculatorLogic {
     mutating func calculateBMI(_ height: Float, _ weight: Float){
         let bmiIs = String(format: "%.1f", weight / (pow(height, 2)))
         calculatedBMI = BMI(value: bmiIs)
-        calculatedBMI?.getAdvice()
+        getAdvice()
     }
     
     func getBMIValue() -> String {
         return calculatedBMI?.value ?? "0.0"
+    }
+    
+    mutating func getAdvice(){
+        if Float(calculatedBMI!.value) ?? 0.0 < 18.5 {
+            calculatedBMI?.advice = "Eat some burgers"
+            calculatedBMI?.color = UIColor.systemBlue
+        }
+        else if Float(calculatedBMI!.value) ?? 0.0 >= 18.5 && Float(calculatedBMI!.value) ?? 0.0 <= 24.9  {
+            calculatedBMI!.advice = "keep doing what youre doing"
+            calculatedBMI!.color = UIColor.systemGreen
+        }
+        
+        else {
+            calculatedBMI!.advice = "lay off the snacks geez"
+            calculatedBMI!.color = UIColor.systemRed
+        }
     }
 }

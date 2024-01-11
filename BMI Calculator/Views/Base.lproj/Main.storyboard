@@ -210,6 +210,7 @@
                     <connections>
                         <outlet property="BMIRemarkLabel" destination="9IV-CT-mxw" id="5d4-wU-ZI5"/>
                         <outlet property="BMIValueLabel" destination="VU9-2W-Sd5" id="BLM-YG-RNW"/>
+                        <outlet property="backgroundColor" destination="r83-N3-Ash" id="gLI-ab-e5x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4fn-rV-g4l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

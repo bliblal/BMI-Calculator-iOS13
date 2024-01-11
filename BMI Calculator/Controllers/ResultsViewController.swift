@@ -11,8 +11,10 @@ import UIKit
 class ResultsViewController: UIViewController {
     var calculatedBMI: String?
     var advice: String?
+    var color: UIColor?
     
 
+    @IBOutlet weak var backgroundColor: UIImageView!
     @IBOutlet weak var BMIRemarkLabel: UILabel!
     @IBOutlet weak var BMIValueLabel: UILabel!
     
@@ -24,6 +26,7 @@ class ResultsViewController: UIViewController {
         
         BMIValueLabel.text = calculatedBMI
         BMIRemarkLabel.text = advice
+        backgroundColor.backgroundColor = color
     }
     
     
