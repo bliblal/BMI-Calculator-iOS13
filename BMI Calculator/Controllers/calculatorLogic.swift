@@ -15,14 +15,24 @@ struct CalculatorLogic {
     mutating func calculateBMI(_ height: Float, _ weight: Float){
         let bmiIs = String(format: "%.1f", weight / (pow(height, 2)))
         calculatedBMI = BMI(value: bmiIs)
-        getAdvice()
+        calculateAdvice()
     }
     
     func getBMIValue() -> String {
         return calculatedBMI?.value ?? "0.0"
     }
     
-    mutating func getAdvice(){
+    func getAdvice() -> String {
+        return calculatedBMI?.advice ?? "lay off the snacks geez"
+    }
+    
+    func getColor() -> UIColor {
+        return calculatedBMI?.color ?? UIColor.systemGreen
+    }
+    
+    
+    
+    mutating func calculateAdvice(){
         if Float(calculatedBMI!.value) ?? 0.0 < 18.5 {
             calculatedBMI?.advice = "Eat some burgers"
             calculatedBMI?.color = UIColor.systemBlue
