@@ -51,8 +51,8 @@ class ViewController: UIViewController {
             let resultVC = segue.destination as! ResultsViewController
             
             resultVC.calculatedBMI = calculatorLogic.getBMIValue()
-            resultVC.advice = calculatorLogic.calculatedBMI?.advice
-            resultVC.color = calculatorLogic.calculatedBMI?.color
+            resultVC.advice = calculatorLogic.getAdvice()
+            resultVC.color = calculatorLogic.getColor()
         }
         
     }
