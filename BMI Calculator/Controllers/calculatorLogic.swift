@@ -10,9 +10,15 @@ import Foundation
 
 
 struct CalculatorLogic {
-    var calculatedBMI: String?
+    var calculatedBMI: BMI?
     
     mutating func calculateBMI(_ height: Float, _ weight: Float){
-        calculatedBMI = String(format: "%.1f", weight / (pow(height, 2)))
+        let bmiIs = String(format: "%.1f", weight / (pow(height, 2)))
+        calculatedBMI = BMI(value: bmiIs)
+        calculatedBMI?.getAdvice()
+    }
+    
+    func getBMIValue() -> String {
+        return calculatedBMI?.value ?? "0.0"
     }
 }

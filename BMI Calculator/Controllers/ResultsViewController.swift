@@ -10,6 +10,8 @@ import UIKit
 
 class ResultsViewController: UIViewController {
     var calculatedBMI: String?
+    var advice: String?
+    
 
     @IBOutlet weak var BMIRemarkLabel: UILabel!
     @IBOutlet weak var BMIValueLabel: UILabel!
@@ -21,6 +23,7 @@ class ResultsViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         BMIValueLabel.text = calculatedBMI
+        BMIRemarkLabel.text = advice
     }
     
     

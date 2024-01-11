@@ -50,7 +50,8 @@ class ViewController: UIViewController {
         if segue.identifier == "calculateResult" {
             let resultVC = segue.destination as! ResultsViewController
             
-            resultVC.calculatedBMI = calculatorLogic.calculatedBMI
+            resultVC.calculatedBMI = calculatorLogic.getBMIValue()
+            resultVC.advice = calculatorLogic.calculatedBMI?.advice
         }
         
     }
